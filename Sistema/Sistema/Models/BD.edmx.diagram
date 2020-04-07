@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc8608b3b95c49e3b09d23b6f2adc6b0" Name="Diagram1">
+        <EntityTypeShape EntityType="Prog3FinalModel.Categorias" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Cliente" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Entradas" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Facturas" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Producto" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Proveedor" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Stock" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Prog3FinalModel.Ventas" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="Prog3FinalModel.fk_CatCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_facturaCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_SalCliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_EntProductos" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_EntProvee" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_facturaVenta" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_ProductoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_SalProductos" ManuallyRouted="false" />
+        <AssociationConnector Association="Prog3FinalModel.fk_StockProdc" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
