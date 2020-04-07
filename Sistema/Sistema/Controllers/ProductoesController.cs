@@ -20,6 +20,16 @@ namespace Sistema.Controllers
             var producto = db.Producto.Include(p => p.Proveedor);
             return View(producto.ToList());
         }
+        public ActionResult Index(FormCollection fc)
+        {
+            string name = fc["Nombre"];
+            var producto = db.Producto.Include(p => p.Proveedor);
+            if(name != "")
+            {
+                producto = (from p in db.Producto where p.Nombre == name select p);
+            }
+            return View(producto.ToList());
+        }
 
         // GET: Productoes/Details/5
         public ActionResult Details(int? id)
