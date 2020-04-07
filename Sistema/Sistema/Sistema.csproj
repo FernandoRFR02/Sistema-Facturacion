@@ -143,10 +143,16 @@
     <Content Include="Views\Proveedors\Edit.cshtml" />
     <Content Include="Views\Proveedors\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Entradas\Create.cshtml" />
+    <Content Include="Views\Entradas\Delete.cshtml" />
+    <Content Include="Views\Entradas\Details.cshtml" />
+    <Content Include="Views\Entradas\Edit.cshtml" />
+    <Content Include="Views\Entradas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\EntradasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductoesController.cs" />
     <Compile Include="Controllers\ProveedorsController.cs" />
