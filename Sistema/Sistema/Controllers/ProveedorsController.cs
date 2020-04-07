@@ -19,6 +19,23 @@ namespace Sistema.Controllers
         {
             return View(db.Proveedor.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(FormCollection fc)
+        {
+            string dato = fc["data"];
+            var proveedor = db.Proveedor;
+            if (dato == string.Empty)
+            {
+                return View(proveedor.ToList());
+            }
+            else
+            {
+                //proveedor = from a in db.Proveedor where a.Nombre == dato || a.Email == dato select a;
+
+                return View(proveedor.ToList());
+            }
+            
+        }
 
         // GET: Proveedors/Details/5
         public ActionResult Details(int? id)

@@ -20,6 +20,55 @@ namespace Sistema.Controllers
             var cliente = db.Cliente.Include(c => c.Categorias);
             return View(cliente.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(FormCollection fc)
+        {
+            string name = fc["Nombre"];
+            //string cat = fc["cat"].ToString();
+            var cliente = db.Cliente.Include(c => c.Categorias);
+            if (name != "")
+            {
+                cliente = (from c in db.Cliente where c.Nombre == name select c);
+            }/*else if (cat != "")
+            {
+                int id = 0;
+                if(cat == "Premium")
+                {
+                   id = 1;
+                }else if(cat == "Regular")
+                {
+                    id = 2;
+                }
+                cliente = (from c in db.Cliente where c.id_categoria == id select c);
+            }*/
+            return View(cliente.ToList());
+        }
+        [HttpGet]
+        public ActionResult Index(string cat)
+        {
+           
+            var cliente = db.Cliente.Include(c => c.Categorias);
+           if (cat != "")
+            {
+                int id = 0;
+                if(cat == "Premium")
+                {
+                   id = 1;
+                }else if(cat == "Regular")
+                {
+                    id = 2;
+                }
+                cliente = (from c in db.Cliente where c.id_categoria == id select c);
+                ViewBag.Conteo = "Hay "+ cliente.Count() + " personas con esta categoria.";
+            }
+            else
+            {
+                ViewBag.Error = "Tiene que seleccionar una categoria para filtrar";
+            }
+            
+            return View(cliente.ToList());
+        }
+
 
         // GET: Clientes/Details/5
         public ActionResult Details(int? id)

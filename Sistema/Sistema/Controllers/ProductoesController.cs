@@ -20,6 +20,7 @@ namespace Sistema.Controllers
             var producto = db.Producto.Include(p => p.Proveedor);
             return View(producto.ToList());
         }
+        [HttpPost]
         public ActionResult Index(FormCollection fc)
         {
             string name = fc["Nombre"];

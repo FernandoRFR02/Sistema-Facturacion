@@ -9,6 +9,24 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Index", "Clientes", FormMethod.Post))
+    {
+        @Html.Label("Nombre:")
+        <input placeholder="Cliente a buscar" name="Nombre" type="text" class="validate" />
+        <input type="submit" name="form" value="Buscar" class="btn-group" />
+    }
+    @using (Html.BeginForm("Index", "Clientes", FormMethod.Get))
+    {
+       <label>Categoria:</label>
+        <select name="cat">
+            <option value="">Seleccione una categoria</option>
+            <option value="Premium">Premium</option>
+            <option value="Regular">Regular</option>
+        </select>
+        <input type="submit" name="form" value="Filtrar" class="btn-group" />
+        @ViewBag.Conteo
+        @ViewBag.Error;
+    }
 </p>
 <table class="table">
     <tr>

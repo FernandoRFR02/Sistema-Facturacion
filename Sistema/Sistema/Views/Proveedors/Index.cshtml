@@ -9,6 +9,12 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Index", "Proveedors", FormMethod.Post))
+    {
+        @Html.Label("Nombre o Email")
+        <input placeholder="Proveedor a buscar" name="data" type="text" class="validate" />
+        <input type="submit" name="form" value="Buscar" class="btn-group" />
+    }
 </p>
 <table class="table">
     <tr>
