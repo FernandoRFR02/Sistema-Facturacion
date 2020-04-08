@@ -6,10 +6,11 @@
     <title>@ViewBag.Title - Sistema de facturacion</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <style>
-        body{
+        body {
             background-color: lightgray;
         }
     </style>
@@ -45,8 +46,57 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Sistema de facturacion</p>
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+                <h3>Sistema<span>Facturacion</span></h3>
+
+                <p class="footer-links">
+                    <a href="\Home/Index">Inicio</a>
+                    |
+                    <a href="\Clientes/Index">Clientes</a>
+                    |
+                    <a href="\Proveedors/Index">Proveedores</a>
+                    |
+                    <a href="\Productoes/Index">Productos</a>
+                </p>
+
+                <p class="footer-company-name">© 2020 Sistema facturacion</p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p>
+                        <span>
+                            San Juan de la Maguana, Mirador norte #16
+                        </span>
+                        San Juan
+                    </p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+1 848 288 2887</p> 
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@sistema.com">Soporte</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    El sistema de facturacion que siempre estara a tu alcance
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
         </footer>
     </div>
 
