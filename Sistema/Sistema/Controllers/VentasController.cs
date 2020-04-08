@@ -20,6 +20,17 @@ namespace Sistema.Controllers
             var ventas = db.Ventas.Include(v => v.Cliente).Include(v => v.Producto);
             return View(ventas.ToList());
         }
+        public ActionResult Index(FormCollection fc)
+        {
+            
+            string name = fc["entrega"];
+            var ventas = db.Ventas.Include(v => v.Cliente).Include(v => v.Producto);
+            if (name != "")
+            {
+                ventas = (from v in db.Ventas where v.Fecha.ToString() == name select v);
+            }
+            return View(ventas.ToList());
+        }
 
         // GET: Ventas/Details/5
         public ActionResult Details(int? id)
