@@ -13,11 +13,11 @@
     {
         @Html.Label("Nombre:")
         <input placeholder="Cliente a buscar" name="Nombre" type="text" class="form-control" />
-        <input type="submit" name="form" value="Buscar" class = "btn btn-default" />
+        <input type="submit" name="form" value="Buscar" class="btn btn-default" />
     }
     @using (Html.BeginForm("Index", "Clientes", FormMethod.Get))
     {
-       <label>Categoria:</label>
+        <label>Categoria:</label>
         <select name="cat" class="form-control">
             <option value="">Seleccione una categoria</option>
             <option value="Premium">Premium</option>
@@ -27,6 +27,7 @@
         @ViewBag.Conteo
         @ViewBag.Error;
     }
+    <button type="button" class="btn btn-default" onclick="javascript:window.print()">Imprimir</button>
 </p>
 <table class="table">
     <tr>

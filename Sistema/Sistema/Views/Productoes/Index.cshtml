@@ -9,11 +9,12 @@
 
 <p>
     @Html.ActionLink("Añadir", "Create")
-    @using (Html.BeginForm("Index","Productoes", FormMethod.Post))
+    @using (Html.BeginForm("Index", "Productoes", FormMethod.Post))
     {
         @Html.Label("Nombre")
-        <input placeholder="Producto a buscar" name="Nombre" type="text" class="form-control"/>
-        <input type="submit" name="form" value="Buscar" class = "btn btn-default"/>
+        <input placeholder="Producto a buscar" name="Nombre" type="text" class="form-control" />
+        <input type="submit" name="form" value="Buscar" class="btn btn-default" />
+        <button type="button" class="btn btn-default" onclick="javascript:window.print()">Imprimir</button>
     }
 </p>
 <table class="table">
