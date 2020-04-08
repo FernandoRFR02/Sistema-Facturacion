@@ -9,6 +9,13 @@
 
 <p>
     @Html.ActionLink("Añadir", "Create")
+    @using (Html.BeginForm("Index", "Ventas", FormMethod.Post))
+    {
+        @Html.Label("Ingrese su busqueda")
+        <input placeholder="Entrega" name="entrega" type="text" class="form-control" />
+        <input type="submit" name="form" value="Buscar" class="btn btn-default" />
+        <button type="button" class="btn btn-default" onclick="javascript:window.print()">Imprimir</button>
+    }
 </p>
 <table class="table">
     <tr>
