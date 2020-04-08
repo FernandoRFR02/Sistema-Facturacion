@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("GenFactura", "Enviar", FormMethod.Post))
+{
+
+    <input type="text" name="cantidad" placeholder="">
+    <input type="text" name="fecha" placeholder="">
+
+    <input type="submit" value="Enviar">
+}

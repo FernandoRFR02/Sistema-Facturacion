@@ -1,11 +1,11 @@
 ﻿@model Sistema.Models.Proveedor
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
     <h4>Proveedor</h4>
@@ -46,6 +46,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_proveedor }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_proveedor }) |
+    @Html.ActionLink("Volver", "Index", new { @class = "btn-delete" })
 </p>

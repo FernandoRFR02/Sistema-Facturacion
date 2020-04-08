@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Sistema.Models;
+using System.Data.SqlClient;
 
 namespace Sistema.Controllers
 {
@@ -19,6 +20,26 @@ namespace Sistema.Controllers
         {
             var entradas = db.Entradas.Include(e => e.Producto).Include(e => e.Proveedor);
             return View(entradas.ToList());
+        }
+        [HttpPost]
+        public ActionResult Index(FormCollection fc)
+        {
+            string name = fc["entrega"];
+            var entradas = db.Entradas.Include(e => e.Producto).Include(e => e.Proveedor);
+            if (name != "")
+            {
+                entradas = (from e in db.Entradas where e.Fecha.ToString() == name select e);
+            }
+            return View(entradas.ToList());
+        }
+
+        public void AddStock(Entradas entradas)
+        {
+            if (ModelState.IsValid)
+            {
+                var cantidad = entradas.Cantidad;
+
+            }
         }
 
         // GET: Entradas/Details/5
@@ -41,6 +62,7 @@ namespace Sistema.Controllers
         {
             ViewBag.id_producto = new SelectList(db.Producto, "id_producto", "Nombre");
             ViewBag.id_proveedor = new SelectList(db.Proveedor, "id_proveedor", "Nombre");
+
             return View();
         }
 
@@ -55,7 +77,17 @@ namespace Sistema.Controllers
             {
                 db.Entradas.Add(entradas);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");   
+            }
+            var idpro = entradas.id_producto;
+            var canti = entradas.Cantidad;
+            string strConString = @"data source=FERNANDORFR;initial catalog=Prog3Final;integrated security=True";
+            using (SqlConnection con = new SqlConnection(strConString))
+            {
+                con.Open();
+                string comando = "Insert into Stock(id_producto,cantidad) values (" + idpro + "," + canti + ")";
+                SqlCommand cmd = new SqlCommand(comando, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
             }
 
             ViewBag.id_producto = new SelectList(db.Producto, "id_producto", "Nombre", entradas.id_producto);

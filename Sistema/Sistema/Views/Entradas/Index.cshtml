@@ -1,14 +1,20 @@
 ﻿@model IEnumerable<Sistema.Models.Entradas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Inicio</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Añadir", "Create")
+    @using (Html.BeginForm("Index", "Productoes", FormMethod.Post))
+    {
+        @Html.Label("Ingrese su busqueda")
+        <input placeholder="Entrega" name="entrega" type="text" class="form-control" />
+        <input type="submit" name="form" value="Buscar" class="btn btn-default" />
+    }
 </p>
 <table class="table">
     <tr>
@@ -19,10 +25,10 @@
             @Html.DisplayNameFor(model => model.Fecha)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Producto.Nombre)
+            @Html.DisplayName("Producto")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Proveedor.Nombre)
+            @Html.DisplayName("Proveedor")
         </th>
         <th></th>
     </tr>
@@ -42,9 +48,9 @@
             @Html.DisplayFor(modelItem => item.Proveedor.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_entrada }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_entrada }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_entrada })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_entrada }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_entrada }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.id_entrada }, new { @class = "btn btn-default" })
         </td>
     </tr>
 }

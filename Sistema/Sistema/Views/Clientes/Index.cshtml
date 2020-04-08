@@ -1,29 +1,29 @@
 ﻿@model IEnumerable<Sistema.Models.Cliente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Inicio</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Añadir", "Create")
     @using (Html.BeginForm("Index", "Clientes", FormMethod.Post))
     {
         @Html.Label("Nombre:")
-        <input placeholder="Cliente a buscar" name="Nombre" type="text" class="validate" />
-        <input type="submit" name="form" value="Buscar" class="btn-group" />
+        <input placeholder="Cliente a buscar" name="Nombre" type="text" class="form-control" />
+        <input type="submit" name="form" value="Buscar" class = "btn btn-default" />
     }
     @using (Html.BeginForm("Index", "Clientes", FormMethod.Get))
     {
        <label>Categoria:</label>
-        <select name="cat">
+        <select name="cat" class="form-control">
             <option value="">Seleccione una categoria</option>
             <option value="Premium">Premium</option>
             <option value="Regular">Regular</option>
         </select>
-        <input type="submit" name="form" value="Filtrar" class="btn-group" />
+        <input type="submit" name="form" value="Filtrar" class="btn btn-default" />
         @ViewBag.Conteo
         @ViewBag.Error;
     }
@@ -43,7 +43,7 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Categorias.NombreCat)
+            @Html.DisplayName("Categoria")
         </th>
         <th></th>
     </tr>
@@ -66,9 +66,9 @@
             @Html.DisplayFor(modelItem => item.Categorias.NombreCat)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_cliente }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_cliente }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_cliente })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_cliente }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_cliente }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.id_cliente }, new { @class = "btn btn-default" })
         </td>
     </tr>
 }
