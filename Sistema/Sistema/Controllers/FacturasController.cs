@@ -20,6 +20,17 @@ namespace Sistema.Controllers
             var facturas = db.Facturas.Include(f => f.Cliente).Include(f => f.Ventas);
             return View(facturas.ToList());
         }
+        public ActionResult Index(FormCollection fc)
+        {
+            
+            string name = fc["entrega"];
+            var facturas = db.Facturas.Include(f => f.Cliente).Include(f => f.Ventas);
+            if (name != "")
+            {
+                facturas = (from f in db.Facturas where f.id_cliente.ToString() == name select f);
+            }
+            return View(facturas.ToList());
+        }
 
         // GET: Facturas/Details/5
         public ActionResult Details(int? id)
