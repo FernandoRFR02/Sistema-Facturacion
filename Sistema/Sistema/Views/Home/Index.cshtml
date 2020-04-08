@@ -1,8 +1,116 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
+<div class="hero-background">
+    <div>
+        <img class="strips" src="\images/strips.png">
+    </div>
+        <!--navigation-->
+        <!-- Hero-Section
+          ================================================== -->
+        <div class="hero row">
+            <div class="hero-right col-sm-6 col-sm-6">
+                <h1 class="header-headline bold">                  Sistema de facturacion<br></h1>
+                <h4 class="header-running-text light">
+                                     Disfruta de nuestro sistema de uso publico para manejar facturas
+                </h4>
+            </div><!--hero-left-->
+            <div class="col-sm-6 col-sm-6 ipad">
+                <img class="ipad-screen img-responsive" src="\images/init.png" />
+            </div>
+            <div><img class="mouse" src="\images/mouse.svg" /></div>
+        </div><!--hero-->
+    </div> 
+<br />
+<br />
+<br />
+<div class="white-section row">
+    <div class="imac col-sm-6">
+        <img class="imac-screen img-responsive" src="\images/imac.png">
+    </div>
+    <!--imac-->
+    <div class="col-sm-6">
+        <div class="white-section-text">
+            <h2 class="imac-section-header light">SIMPLE Y FUNCIONAL</h2>
+            <div class="imac-section-desc">
+                <span>
+                    Al utilizar las funcionalidades de entity framework y una buena estructura en la base de datos poseemos un sistema simple y de total comodidad para el usuario
+                </span>
+            </div>
+        </div>
+    </div>
+</div><!--white-section-text-section--->
+<!-- Pricing
+  ================================================== -->
+<div id="pricing" class="pricing-background">
+    <h2 class="pricing-section-header light text-center">Elige tu primera accion</h2>
+    <h4 class=" pricing-section-sub text-center light">Elige cualquiera de nuestras funciones</h4>
+    <div class="pricing-table row">
+        <div class="col-sm-4">
+            <div class="plan">
+                <h3 class="plan-title light">Clientes</h3>
+                <ul class="plan-features">
+                    <li>Ver</li>
+                    <li>Añadir</li>
+                    <li>Borrar</li>
+                    <li>Consultar</li>
+                </ul>
+                <div class="plan-price-div text-center">
+                    <div class="choose-plan-div">
+                        <br />
+                        <br />
+                        <br />
+                        <a class="plan-btn light" href="\Clientes/Index">
+                            Entrar
+                        </a>
+                    </div>
+                </div>
+            </div><!--basic-plan--->
+        </div><!--col-->
+        <div class="col-sm-4">
+            <div class="mid-plan">
+                <h3 class="plan-title light">Proveedores</h3>
+                <ul class="plan-features">
+                    <li>Ver</li>
+                    <li>Añadir</li>
+                    <li>Borrar</li>
+                    <li>Consultar</li>
+                </ul>
+                <div class="plan-price-div text-center">
+                    <div class="choose-plan-div">
+                        <br />
+                        <br />
+                        <br />
+                        <a class="plan-btn light" href="\Proveedors/Index">
+                            Entrar
+                        </a>
+                    </div>
+                </div>
+            </div><!--pro-plan--->
+        </div><!--col-->
+        <div class="col-sm-4">
+            <div class="plan">
+                <h3 class="plan-title light">Productos</h3>
+                <ul class="plan-features">
+                    <li>Ver</li>
+                    <li>Añadir</li>
+                    <li>Borrar</li>
+                    <li>Consultar</li>
+                </ul>
+                <div class="plan-price-div text-center">
+                    <div class="choose-plan-div">
+                        <br />
+                        <br />
+                        <br />
+                        <a class="plan-btn light" href="\Productoes/Index">
+                            Entrar
+                        </a>
+                    </div>
+                </div>
+            </div><!--pro-plan--->
+        </div><!--col-->
+    </div>  <!--pricing-table-->
+</div><!--pricing-background-->

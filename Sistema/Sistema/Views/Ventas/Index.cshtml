@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<Sistema.Models.Ventas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Inicio</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Añadir", "Create")
 </p>
 <table class="table">
     <tr>
@@ -19,10 +19,10 @@
             @Html.DisplayNameFor(model => model.Fecha)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+            @Html.DisplayName("Cliente")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Producto.Nombre)
+            @Html.DisplayName("Producto")
         </th>
         <th></th>
     </tr>
@@ -42,9 +42,9 @@
             @Html.DisplayFor(modelItem => item.Producto.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_venta }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_venta }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_venta })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_venta }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_venta }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.id_venta })
         </td>
     </tr>
 }

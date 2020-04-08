@@ -1,13 +1,13 @@
 ﻿@model Sistema.Models.Ventas
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Borrar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Borrar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Estas seguro de borrar esto?</h3>
 <div>
     <h4>Ventas</h4>
     <hr />
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cliente.Nombre)
+            @Html.DisplayName("Cliente")
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Producto.Nombre)
+            @Html.DisplayName("Producto")
         </dt>
 
         <dd>
@@ -50,8 +50,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
         </div>
     }
 </div>
